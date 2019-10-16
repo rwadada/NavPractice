@@ -14,4 +14,6 @@ android {
 dependencies {
     implementation(fileTree("dir" to "libs", "include" to listOf("*.jar")))
     common()
+
+    testing()
 }

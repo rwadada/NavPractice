@@ -17,5 +17,7 @@ dependencies {
     app()
     navigation()
 
+    testing()
+
     implementation(project(":core"))
 }

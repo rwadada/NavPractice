@@ -60,10 +60,6 @@ fun DependencyHandler.common() {
     implementation(Deps.Kotlin.kotlinStdlib)
     implementation(Deps.AndroidX.appCompat)
     implementation(Deps.AndroidX.coreKtx)
-
-    testImplementation(Deps.Testing.jUnit)
-    testImplementation(Deps.Testing.testRunner)
-    testImplementation(Deps.Testing.espresso)
 }
 
 fun DependencyHandler.app() {
@@ -77,4 +73,13 @@ fun DependencyHandler.app() {
 fun DependencyHandler.navigation() {
     implementation(Deps.Navigation.navigationFragment)
     implementation(Deps.Navigation.navigationUi)
+}
+
+fun DependencyHandler.testing() {
+    testImplementation(Deps.Testing.jUnit)
+    testImplementation(Deps.Testing.coreTesting)
+
+    add("androidTestImplementation", Deps.Testing.coreTesting)
+    add("androidTestImplementation", Deps.Testing.testRunner)
+    add("androidTestImplementation", Deps.Testing.espresso)
 }

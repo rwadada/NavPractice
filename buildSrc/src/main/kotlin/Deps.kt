@@ -43,6 +43,7 @@ object Deps {
         const val jUnit = "junit:junit:${Versions.junitVersion}"
         const val testRunner = "androidx.test:runner:${Versions.androidxTestVersion}"
         const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoVersion}"
+        const val coreTesting = "android.arch.core:core-testing:${Versions.androidxTestVersion}"
     }
     object Navigation {
         const val navigationFragment = "androidx.navigation:navigation-fragment:${Versions.navVersion}"

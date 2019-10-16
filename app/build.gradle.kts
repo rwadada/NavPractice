@@ -18,6 +18,8 @@ dependencies {
     app()
     navigation()
 
+    testing()
+
     implementation(project(":core"))
     implementation(project(":feature_main"))
     implementation(project(":feature_sub"))
