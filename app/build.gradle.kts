@@ -21,6 +21,6 @@ dependencies {
     testing()
 
     implementation(project(":core"))
-    implementation(project(":feature_main"))
-    implementation(project(":feature_sub"))
+    implementation(project(":feature:main"))
+    implementation(project(":feature:sub"))
 }

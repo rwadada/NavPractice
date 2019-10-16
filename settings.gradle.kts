@@ -1,7 +1,7 @@
 include(
     ":app",
     ":core",
-    ":feature_main",
-    ":feature_sub"
+    ":feature:main",
+    ":feature:sub"
 )
 rootProject.name = "NavPractice"
