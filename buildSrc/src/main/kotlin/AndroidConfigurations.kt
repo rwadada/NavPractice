@@ -14,7 +14,7 @@ fun BaseExtension.common() {
     }
 }
 
-fun BaseExtension.app() {
+fun BaseExtension.ui() {
     compileSdkVersion(Versions.compileSdkVersion)
     defaultConfig {
         applicationId = "com.rwadada.navpractice"
@@ -62,12 +62,16 @@ fun DependencyHandler.common() {
     implementation(Deps.AndroidX.coreKtx)
 }
 
-fun DependencyHandler.app() {
+fun DependencyHandler.ui() {
     implementation(Deps.AndroidX.constraintLayout)
+}
 
-    // Dagger
+fun DependencyHandler.dagger() {
     implementation(Deps.Dagger.dagger)
     kapt(Deps.Dagger.daggerCompiler)
+    implementation(Deps.Dagger.daggerAndroid)
+    implementation(Deps.Dagger.daggerAndroidSupport)
+    kapt(Deps.Dagger.daggerAndroidProcesser)
 }
 
 fun DependencyHandler.navigation() {

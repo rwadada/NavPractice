@@ -38,6 +38,9 @@ object Deps {
     object Dagger {
         const val dagger = "com.google.dagger:dagger:${Versions.daggerVersion}"
         const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.daggerVersion}"
+        const val daggerAndroid = "com.google.dagger:dagger-android:${Versions.daggerVersion}"
+        const val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Versions.daggerVersion}"
+        const val daggerAndroidProcesser = "com.google.dagger:dagger-android-processor:${Versions.daggerVersion}"
     }
     object Testing {
         const val jUnit = "junit:junit:${Versions.junitVersion}"

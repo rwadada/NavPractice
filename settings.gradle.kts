@@ -1,5 +1,6 @@
 include(
     ":app",
+    ":ui",
     ":core",
     ":feature:main",
     ":feature:sub"

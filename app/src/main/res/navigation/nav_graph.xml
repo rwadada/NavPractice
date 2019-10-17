@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ui="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    ui:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.rwadada.feature_main.MainFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main"/>
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_subFragment"
+            ui:popUpTo="@id/mainFragment"
+            ui:popUpToInclusive="true"
+            ui:destination="@id/subFragment" />
+        <action
+            android:id="@+id/action_mainFragment_self"
+            ui:popUpTo="@id/mainFragment"
+            ui:popUpToInclusive="true"
+            ui:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subFragment"
+        android:name="com.rwadada.feature_sub.SubFragment"
+        android:label="SubFragment"
+        tools:layout="@layout/fragment_sub">
+        <action
+            android:id="@+id/action_subFragment_self"
+            ui:popUpTo="@id/subFragment"
+            ui:popUpToInclusive="true"
+            ui:destination="@id/subFragment" />
+        <action
+            android:id="@+id/action_subFragment_to_mainFragment"
+            ui:popUpTo="@id/subFragment"
+            ui:popUpToInclusive="true"
+            ui:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

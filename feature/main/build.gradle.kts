@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
+    id("androidx.navigation.safeargs.kotlin")
     kotlin("android")
 }
 
@@ -14,8 +15,9 @@ android {
 dependencies {
     implementation(fileTree("dir" to "libs", "include" to listOf("*.jar")))
     common()
-    app()
+    ui()
     navigation()
+    dagger()
 
     testing()
 

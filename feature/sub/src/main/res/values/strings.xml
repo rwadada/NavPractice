@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">feature_sub</string>
+    <string name="fragment_sub">FRAGMENT SUB</string>
+    <string name="activity_sub">ACTIVITY SUB</string>
+    <string name="fragment_main">FRAGMENT MAIN</string>
 </resources>
