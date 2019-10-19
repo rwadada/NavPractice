@@ -1,6 +1,7 @@
 package com.rwadada.navpractice.di.modules
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.FragmentNavigator
@@ -30,7 +31,7 @@ object NavigationModule {
                 navOptions: NavOptions?,
                 extras: FragmentNavigator.Extras?
             ) {
-                when (fragment) {
+                when (fragment::class) {
                     MainFragment::class -> {
                         mainNavigation(
                             fragment as MainFragment,
@@ -49,8 +50,10 @@ object NavigationModule {
                             extras
                         )
                     }
+                    else -> {
+                        super.navigate(fragment, destinations, args, navOptions, extras)
+                    }
                 }
-                super.navigate(fragment, destinations, args, navOptions, extras)
             }
         }
     }
@@ -62,6 +65,7 @@ object NavigationModule {
         navOptions: NavOptions?,
         extras: FragmentNavigator.Extras?
     ) {
+        Log.d("NAVIGATION", "Called by ${MainFragment::class.java.simpleName}")
         when (destinations) {
             Destinations.MAIN_FRAGMENT -> {
                 if (args == null && extras == null) {
@@ -98,6 +102,7 @@ object NavigationModule {
         navOptions: NavOptions?,
         extras: FragmentNavigator.Extras?
     ) {
+        Log.d("NAVIGATION", "Called by ${SubFragment::class.java.simpleName}")
         when (destinations) {
             Destinations.MAIN_FRAGMENT -> {
                 if (args == null && extras == null) {

@@ -1,5 +1,6 @@
 package com.rwadada.feature_sub
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,6 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import com.rwadada.core.Destinations
+import com.rwadada.core.Navigation
+import dagger.android.support.AndroidSupportInjection
+import javax.inject.Inject
 
 class SubFragment : Fragment() {
     companion object {
@@ -16,6 +21,9 @@ class SubFragment : Fragment() {
 
     private lateinit var button1: Button
     private lateinit var button2: Button
+
+    @Inject
+    lateinit var navigation: Navigation
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,6 +39,11 @@ class SubFragment : Fragment() {
         return view
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        AndroidSupportInjection.inject(this)
+    }
+
     private fun setOnClickListeners() {
         button1.setOnClickListener {
             Log.d(TAG, "ON CLICK BUTTON1")
@@ -38,6 +51,7 @@ class SubFragment : Fragment() {
 
         button2.setOnClickListener {
             Log.d(TAG, "ON CLICK BUTTON2")
+            navigation.navigate(this, Destinations.MAIN_FRAGMENT)
         }
     }
 }

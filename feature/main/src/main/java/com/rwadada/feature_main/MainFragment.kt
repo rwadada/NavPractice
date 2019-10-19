@@ -22,8 +22,8 @@ class MainFragment : Fragment() {
     private lateinit var button1: Button
     private lateinit var button2: Button
 
-//    @Inject
-//    lateinit var navigation: Navigation
+    @Inject
+    lateinit var navigation: Navigation
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,7 +41,7 @@ class MainFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-//        AndroidSupportInjection.inject(this)
+        AndroidSupportInjection.inject(this)
     }
 
     private fun setOnClickListeners() {
@@ -51,7 +51,7 @@ class MainFragment : Fragment() {
 
         button2.setOnClickListener {
             Log.d(TAG, "ON CLICK BUTTON2")
-//            navigation.navigate(this, Destinations.SUB_FRAGMENT)
+            navigation.navigate(this, Destinations.SUB_FRAGMENT)
         }
     }
 }
