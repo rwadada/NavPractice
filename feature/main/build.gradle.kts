@@ -10,6 +10,7 @@ plugins {
 android {
     common()
     setUpBuildTypes()
+    setUpDataBinding()
 }
 
 dependencies {

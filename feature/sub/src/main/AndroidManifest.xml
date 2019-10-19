@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rwadada.feature_sub" />
+<manifest package="com.rwadada.sub" />

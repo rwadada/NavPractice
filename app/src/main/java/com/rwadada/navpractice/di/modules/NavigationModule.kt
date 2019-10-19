@@ -8,10 +8,10 @@ import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.rwadada.core.Destinations
 import com.rwadada.core.Navigation
-import com.rwadada.feature_main.MainFragment
-import com.rwadada.feature_main.MainFragmentDirections
-import com.rwadada.feature_sub.SubFragment
-import com.rwadada.feature_sub.SubFragmentDirections
+import com.rwadada.main.MainFragment
+import com.rwadada.main.MainFragmentDirections
+import com.rwadada.sub.SubFragment
+import com.rwadada.sub.SubFragmentDirections
 import com.rwadada.navpractice.R
 import dagger.Module
 import dagger.Provides

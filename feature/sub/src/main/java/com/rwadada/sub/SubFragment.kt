@@ -1,4 +1,4 @@
-package com.rwadada.feature_sub
+package com.rwadada.sub
 
 import android.content.Context
 import android.os.Bundle
@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.rwadada.core.Destinations
 import com.rwadada.core.Navigation
+import com.rwadada.sub.databinding.FragmentSubBinding
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -19,8 +21,7 @@ class SubFragment : Fragment() {
         private val TAG: String = SubFragment::class.java.simpleName
     }
 
-    private lateinit var button1: Button
-    private lateinit var button2: Button
+    private lateinit var binding: FragmentSubBinding
 
     @Inject
     lateinit var navigation: Navigation
@@ -30,13 +31,12 @@ class SubFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View = inflater.inflate(R.layout.fragment_sub, container, false)
-        button1 = view.findViewById(R.id.button)
-        button2 = view.findViewById(R.id.button2)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sub, container, false)
+        binding.handler = this
 
-        setOnClickListeners()
+        binding.lifecycleOwner = viewLifecycleOwner
 
-        return view
+        return binding.root
     }
 
     override fun onAttach(context: Context) {
@@ -44,14 +44,20 @@ class SubFragment : Fragment() {
         AndroidSupportInjection.inject(this)
     }
 
-    private fun setOnClickListeners() {
-        button1.setOnClickListener {
-            Log.d(TAG, "ON CLICK BUTTON1")
-        }
+    @Suppress("UNUSED_PARAMETER")
+    fun onClickTitle(view: View) {
+        Log.d(TAG, "ON CLICK TITLE")
+        navigation.navigate(this, Destinations.SUB_FRAGMENT)
+    }
 
-        button2.setOnClickListener {
-            Log.d(TAG, "ON CLICK BUTTON2")
-            navigation.navigate(this, Destinations.MAIN_FRAGMENT)
-        }
+    @Suppress("UNUSED_PARAMETER")
+    fun onClickButton1(view: View) {
+        Log.d(TAG, "ON CLICK BUTTON1")
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun onClickButton2(view: View) {
+        Log.d(TAG, "ON CLICK BUTTON2")
+        navigation.navigate(this, Destinations.MAIN_FRAGMENT)
     }
 }

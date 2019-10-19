@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.rwadada.feature_main.MainFragment"
+        android:name="com.rwadada.main.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
         <action
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/subFragment"
-        android:name="com.rwadada.feature_sub.SubFragment"
+        android:name="com.rwadada.sub.SubFragment"
         android:label="SubFragment"
         tools:layout="@layout/fragment_sub">
         <action

@@ -1,4 +1,4 @@
-package com.rwadada.feature_sub
+package com.rwadada.main
 
 import org.junit.Test
 

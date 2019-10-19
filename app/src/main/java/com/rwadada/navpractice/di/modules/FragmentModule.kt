@@ -1,7 +1,7 @@
 package com.rwadada.navpractice.di.modules
 
-import com.rwadada.feature_main.MainFragment
-import com.rwadada.feature_sub.SubFragment
+import com.rwadada.main.MainFragment
+import com.rwadada.sub.SubFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
