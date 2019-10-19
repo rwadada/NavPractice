@@ -53,6 +53,7 @@ class SubFragment : Fragment() {
     @Suppress("UNUSED_PARAMETER")
     fun onClickButton1(view: View) {
         Log.d(TAG, "ON CLICK BUTTON1")
+        navigation.navigate(this, Destinations.GOOGLE)
     }
 
     @Suppress("UNUSED_PARAMETER")

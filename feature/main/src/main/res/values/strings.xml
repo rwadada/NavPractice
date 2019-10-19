@@ -3,4 +3,5 @@
     <string name="fragment_main">FRAGMENT MAIN</string>
     <string name="activity_main">ACTIVITY MAIN</string>
     <string name="fragment_sub">FRAGMENT SUB</string>
+    <string name="my_repository">MY REPOSITORY</string>
 </resources>

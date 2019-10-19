@@ -1,5 +1,8 @@
 package com.rwadada.navpractice.di.modules
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -24,6 +27,7 @@ object NavigationModule {
     @Provides
     fun provideNavigation(): Navigation {
         return object : Navigation {
+            override var currentActivity: Activity? = null
             override fun navigate(
                 fragment: Fragment,
                 destinations: Destinations,
@@ -34,6 +38,7 @@ object NavigationModule {
                 when (fragment::class) {
                     MainFragment::class -> {
                         mainNavigation(
+                            currentActivity,
                             fragment as MainFragment,
                             destinations,
                             args,
@@ -43,6 +48,7 @@ object NavigationModule {
                     }
                     SubFragment::class -> {
                         subNavigation(
+                            currentActivity,
                             fragment as SubFragment,
                             destinations,
                             args,
@@ -59,6 +65,7 @@ object NavigationModule {
     }
 
     private fun mainNavigation(
+        currentActivity: Activity?,
         fragment: MainFragment,
         destinations: Destinations,
         args: Bundle?,
@@ -91,11 +98,15 @@ object NavigationModule {
                     )
                 }
             }
+            Destinations.GOOGLE -> {
+                openGoogle(currentActivity)
+            }
         }
 
     }
 
     private fun subNavigation(
+        currentActivity: Activity?,
         fragment: SubFragment,
         destinations: Destinations,
         args: Bundle?,
@@ -128,7 +139,15 @@ object NavigationModule {
                     )
                 }
             }
+            Destinations.GOOGLE -> {
+                openGoogle(currentActivity)
+            }
         }
+    }
 
+    private fun openGoogle(currentActivity: Activity?) {
+        val uri: Uri = Uri.parse("https://github.com/rwadada/NavPractice")
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        currentActivity?.startActivity(intent)
     }
 }
