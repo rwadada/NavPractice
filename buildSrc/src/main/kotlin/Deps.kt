@@ -17,7 +17,7 @@ object Versions {
 
     const val constraintVersion = "1.1.3"
 
-    const val daggerVersion = "2.24"
+    const val daggerVersion = "2.25.2"
 
     const val navVersion = "2.1.0"
 }

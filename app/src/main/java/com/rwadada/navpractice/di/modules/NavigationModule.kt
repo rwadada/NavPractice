@@ -22,7 +22,6 @@ import javax.inject.Singleton
 
 @Module
 object NavigationModule {
-    @JvmStatic
     @Singleton
     @Provides
     fun provideNavigation(): Navigation {

@@ -9,12 +9,10 @@ import javax.inject.Singleton
 
 @Module
 object AppModule {
-    @JvmStatic
     @Singleton
     @Provides
     fun provideContext(applicationWrapper: ApplicationWrapper): Context = applicationWrapper.applicationContext
 
-    @JvmStatic
     @Singleton
     @Provides
     fun provideColors(context: Context) = Colors(context)
