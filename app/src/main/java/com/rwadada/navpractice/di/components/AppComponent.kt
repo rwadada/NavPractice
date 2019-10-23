@@ -2,6 +2,7 @@ package com.rwadada.navpractice.di.components
 
 import com.rwadada.navpractice.ApplicationWrapper
 import com.rwadada.navpractice.di.modules.ActivityModule
+import com.rwadada.navpractice.di.modules.AppModule
 import com.rwadada.navpractice.di.modules.FragmentModule
 import com.rwadada.navpractice.di.modules.NavigationModule
 import dagger.Component
@@ -15,7 +16,12 @@ import javax.inject.Singleton
         AndroidInjectionModule::class,
         NavigationModule::class,
         ActivityModule::class,
-        FragmentModule::class
+        FragmentModule::class,
+        AppModule::class
     ]
 )
-interface AppComponent : AndroidInjector<ApplicationWrapper>
+interface AppComponent : AndroidInjector<ApplicationWrapper> {
+
+    @Component.Factory
+    interface Factory : AndroidInjector.Factory<ApplicationWrapper>
+}

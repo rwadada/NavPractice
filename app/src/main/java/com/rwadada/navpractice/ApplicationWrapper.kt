@@ -13,7 +13,9 @@ class ApplicationWrapper : Application(), HasAndroidInjector {
     lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     override fun androidInjector(): AndroidInjector<Any> {
-        DaggerAppComponent.create().inject(this)
+        DaggerAppComponent.factory()
+            .create(this)
+            .inject(this)
         return androidInjector
     }
 
