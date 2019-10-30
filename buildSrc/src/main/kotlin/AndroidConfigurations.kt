@@ -71,7 +71,7 @@ fun DependencyHandler.dagger() {
     kapt(Deps.Dagger.daggerCompiler)
     implementation(Deps.Dagger.daggerAndroid)
     implementation(Deps.Dagger.daggerAndroidSupport)
-    kapt(Deps.Dagger.daggerAndroidProcesser)
+    kapt(Deps.Dagger.daggerAndroidProcessor)
 }
 
 fun DependencyHandler.navigation() {
