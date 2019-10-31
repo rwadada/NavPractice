@@ -29,7 +29,7 @@ fun BaseExtension.ui() {
 fun BaseExtension.setUpBuildTypes() {
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 File("proguard-rules.pro")

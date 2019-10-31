@@ -8,7 +8,6 @@ plugins {
 
 android {
     common()
-    setUpBuildTypes()
 }
 
 dependencies {

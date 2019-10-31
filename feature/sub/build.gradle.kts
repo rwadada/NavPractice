@@ -9,7 +9,6 @@ plugins {
 
 android {
     common()
-    setUpBuildTypes()
     setUpDataBinding()
 }
 
